@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts/RobotoFlex-VariableFont_GRAD\,XOPQ\,XTRA\,YOPQ\,YTAS\,YTDE\,YTFI\,YTLC\,YTUC\,opsz\,slnt\,wdth\,wght.ttf")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Yrsa";
+  src: url("fonts/Yrsa-Italic-VariableFont_wght.ttf") format("woff2"),
+    url("fonts/Yrsa-VariableFont_wght.ttf") format("opentype");
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-family: Yrsa;
+}
+
+p,
+dl {
+  font-family: Yrsa;
+  color: white;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Roboto;
+  color: white;
+}
+
+body {
+  background-color: rgb(78, 76, 76);
+}
+
+header {
+  background-color: rgb(26, 21, 21);
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 1rem;
+  color: white;
+}
+
+ul > li {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+
+.logo {
+  padding: 2rem;
+  display: flex;
+}

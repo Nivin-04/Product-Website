@@ -1,0 +1,30 @@
+h1,
+p {
+  color: white;
+}
+
+/* CATEGORIES */
+
+.categories-container {
+  gap: 16px;
+  padding: 2rem;
+}
+
+.categories-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  padding: 1rem;
+}
+
+.list {
+  background-color: gray;
+  padding: 3rem;
+  margin: 1rem;
+  border-radius: 5px;
+}
+
+h1 {
+  padding: 2rem;
+  padding-bottom: 0%;
+}
