@@ -1,10 +1,10 @@
 .product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 290px));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adjusted */
   gap: 2rem;
   padding: 2rem;
   margin: 2rem;
-  margin-top: 0%;
+  margin-top: 0; /* Fixed */
 }
 
 .product {
@@ -21,7 +21,7 @@ img {
 
 h1 {
   padding: 4rem;
-  padding-bottom: 0%;
+  padding-bottom: 0;
   font-size: 46px;
 }
 
@@ -29,4 +29,9 @@ article {
   background-color: rgb(26, 21, 21);
   padding: 2rem;
   border-radius: 5px;
+}
+
+/* Ensure text is visible */
+article p {
+  color: white;
 }
