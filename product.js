@@ -1,4 +1,4 @@
-let productId = 1164;
+let productId = new URLSearchParams(window.location.search).get("id");
 
 // Select the correct container
 let product = document.querySelector(".product");

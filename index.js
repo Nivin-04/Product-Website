@@ -10,6 +10,7 @@ function showCategori(data) {
   const markup = data
     .map(
       (element) => `
+      
           <a class="list" href="productlist.html?category=${element.category}">${element.category}</a>
 
     `
