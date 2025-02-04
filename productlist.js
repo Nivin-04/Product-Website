@@ -1,7 +1,9 @@
 const productContainer = document.querySelector("main");
 productContainer.classList.add("product-list");
 
-fetch("https://kea-alt-del.dk/t7/api/products")
+const mycategori = new URLSearchParams(window.location.search).get("category");
+
+fetch(`https://kea-alt-del.dk/t7/api/products?category=${mycategori}`)
   .then((res) => res.json())
   .then((data) => showList(data));
 
