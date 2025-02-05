@@ -1,4 +1,3 @@
-/* Ensure the main container uses flex to align items side by side */
 main {
   display: flex;
   justify-content: center;
@@ -6,22 +5,19 @@ main {
   padding: 2rem;
 }
 
-/* Product container: Flexbox for image (left) & content (right) */
 .product {
   display: flex;
   align-items: flex-start;
-  gap: 4rem; /* Space between image and content */
+  gap: 4rem;
   max-width: 80%;
 }
 
-/* Image should take up space but not be too large */
 .product img {
   max-width: 50%;
   height: auto;
   border-radius: 10px;
 }
 
-/* Content container on the right */
 .product-content {
   flex: 1;
   display: flex;
@@ -29,14 +25,12 @@ main {
   gap: 1rem;
 }
 
-/* Styling for info container */
 .info-container {
   background-color: rgb(26, 21, 21);
   padding: 1rem;
   border-radius: 5px;
 }
 
-/* Purchase container stays below info */
 .purchase-container {
   background-color: rgb(26, 21, 21);
   color: white;
@@ -98,4 +92,81 @@ dl {
 
 dd {
   margin: 1rem;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: red;
+  margin-right: 8px;
+}
+
+.new-price {
+  font-weight: bold;
+  color: green;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .product {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    max-width: 90%;
+  }
+
+  .product img {
+    max-width: 80%;
+  }
+
+  p {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  dt {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 1rem;
+  }
+
+  .product {
+    max-width: 100%;
+    gap: 1rem;
+  }
+
+  .product img {
+    max-width: 100%;
+  }
+
+  .product-content {
+    gap: 0.5rem;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  dt {
+    font-size: 16px;
+  }
+
+  .purchase-container {
+    padding: 0.8rem;
+  }
+
+  button {
+    padding: 8px;
+  }
 }

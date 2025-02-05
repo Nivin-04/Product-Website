@@ -11,13 +11,26 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
       return;
     }
 
+    const originalPrice = data.price;
+    const discountedPrice = data.discount
+      ? Math.round(originalPrice * (1 - data.discount / 100))
+      : originalPrice;
+
     product.innerHTML = `
-      <img src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" alt="${data.productdisplayname}" />
+      <img src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" alt="${
+      data.productdisplayname
+    }" />
 
       <div class="product-content">
         <section class="info-container">
           <h2>Product Information</h2>
-          <p><strong>Price:</strong> $${data.price}</p>
+          <p><strong>Price:</strong> 
+            ${
+              data.discount
+                ? `<span class="old-price">DKK ${originalPrice},-</span> <span class="new-price">DKK ${discountedPrice},-</span>`
+                : `DKK ${originalPrice},-`
+            }
+          </p>
           <dl>
             <dt><strong>Name:</strong></dt>
             <dd>${data.productdisplayname}</dd>

@@ -12,9 +12,14 @@ function showList(products) {
 
   let markup = products
     .map((product) => {
+      const originalPrice = product.price;
+      const discountedPrice = product.discount
+        ? Math.round(originalPrice * (1 - product.discount / 100))
+        : originalPrice;
+
       return `
-        <article class="product ${product.discount && "onSale"} ${
-        product.soldout && "soldOut"
+        <article class="product ${product.discount ? "onSale" : ""} ${
+        product.soldout ? "soldOut" : ""
       }">
           <a href="product.html?id=${product.id}">
             <img src="https://kea-alt-del.dk/t7/images/webp/640/${
@@ -23,7 +28,13 @@ function showList(products) {
           </a>
           <p>${product.productdisplayname}</p>
           <p class="tag">${product.category} | ${product.brandname}</p>
-          <p class="price">DKK ${product.price},-</p>
+          <p class="price">
+            ${
+              product.discount
+                ? `<span class="old-price">DKK ${originalPrice},-</span> <span class="new-price">DKK ${discountedPrice},-</span>`
+                : `DKK ${originalPrice},-`
+            }
+          </p>
         </article>`;
     })
     .join("");

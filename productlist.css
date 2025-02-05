@@ -19,6 +19,20 @@ img {
   height: auto;
 }
 
+img:hover {
+  scale: 1.05;
+  -webkit-mask-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
 h1 {
   padding: 4rem;
   padding-bottom: 0;
@@ -42,7 +56,7 @@ article p {
   content: "onSale";
   position: relative;
   top: auto;
-  left: 62%;
+  left: 35%;
   padding: 7px;
   border-radius: 4px;
 }
@@ -66,4 +80,61 @@ article p {
 
 .product-list article.onSale .discounted {
   display: flex;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: red;
+  margin-right: 8px;
+}
+
+.new-price {
+  font-weight: bold;
+  color: green;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .product-list {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  h1 {
+    font-size: 32px;
+    padding: 2rem;
+  }
+
+  article {
+    padding: 1.5rem;
+  }
+
+  .onSale .price::after {
+    left: 25%;
+    font-size: 12px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-list {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 28px;
+    padding: 1.5rem;
+  }
+
+  .onSale .price::after {
+    left: 20%;
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  article {
+    padding: 1rem;
+  }
 }
