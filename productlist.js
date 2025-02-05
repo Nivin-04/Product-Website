@@ -22,7 +22,7 @@ function showList(products) {
         product.soldout ? "soldOut" : ""
       }">
           <a href="product.html?id=${product.id}">
-            <img src="https://kea-alt-del.dk/t7/images/webp/640/${
+            <img class="image" src="https://kea-alt-del.dk/t7/images/webp/640/${
               product.id
             }.webp" alt="${product.productdisplayname}" />
           </a>
