@@ -14,7 +14,7 @@ function showList(products) {
     .map((product) => {
       const originalPrice = product.price;
       const discountedPrice = product.discount
-        ? Math.round(originalPrice * (1 - product.discount / 100))
+        ? Math.floor(originalPrice * (1 - product.discount / 100))
         : originalPrice;
 
       return `
